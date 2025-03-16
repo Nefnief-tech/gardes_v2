@@ -8,7 +8,7 @@ let hasShownNetworkError = false;
 
 // Appwrite configuration
 const appwriteEndpoint =
-  "http://test-appwrite-78c7cc-150-230-144-172.traefik.me/v1";
+  "https://test-appwrite-78c7cc-150-230-144-172.traefik.me/v1";
 const appwriteProjectId = "67d60574000a6668c57f"; // Replace with your actual project ID
 
 // Database configuration
