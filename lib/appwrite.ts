@@ -7,7 +7,7 @@ export const ENABLE_CLOUD_FEATURES = true; // Set to true to enable cloud featur
 let hasShownNetworkError = false;
 
 // Appwrite configuration
-const appwriteEndpoint = "https://test-b74502-150-230-144-172.traefik.me/v1";
+const appwriteEndpoint = "http://test-b74502-150-230-144-172.traefik.me/v1";
 const appwriteProjectId = "67d6ea990025fa097964"; // Replace with your actual project ID
 
 // Database configuration
