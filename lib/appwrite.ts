@@ -257,7 +257,7 @@ export const updateUserSyncPreference = async (
     const users = await databases.listDocuments(
       DATABASE_ID,
       USERS_COLLECTION_ID,
-      [Query.equal("userID", userId)]
+      [Query.equal("userId", userId)]
     );
 
     if (users.documents.length > 0) {
@@ -296,7 +296,7 @@ export const syncSubjectsToCloud = async (userId: string, subjects: any[]) => {
       const existingSubjects = await databases.listDocuments(
         DATABASE_ID,
         SUBJECTS_COLLECTION_ID,
-        [Query.equal("userID", userId)]
+        [Query.equal("userId", userId)]
       );
 
       for (const doc of existingSubjects.documents) {
@@ -317,8 +317,8 @@ export const syncSubjectsToCloud = async (userId: string, subjects: any[]) => {
         SUBJECTS_COLLECTION_ID,
         ID.unique(),
         {
-          userID: userId,
-          subjectID: subject.id,
+          userId: userId,
+          subjectid: subject.id,
           name: subject.name,
           averageGrade: subject.averageGrade || 0,
         }
@@ -409,7 +409,7 @@ export const getSubjectsFromCloud = async (userId: string) => {
     const subjects = await databases.listDocuments(
       DATABASE_ID,
       SUBJECTS_COLLECTION_ID,
-      [Query.equal("userID", userId)]
+      [Query.equal("userId", userId)]
     );
 
     const result = [];
