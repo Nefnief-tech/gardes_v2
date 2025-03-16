@@ -152,18 +152,18 @@ export async function getSubjectsFromStorage(
 
 // Add a grade to a specific subject
 export async function addGradeToSubject(
-  subjectId: string,
+  subjectid: string,
   grade: Grade,
   userId?: string,
   syncEnabled?: boolean
 ): Promise<boolean> {
   try {
-    console.log(`Adding grade to subject ${subjectId}:`, grade);
+    console.log(`Adding grade to subject ${subjectid}:`, grade);
     const subjects = await getSubjectsFromStorage(userId, syncEnabled);
-    const subjectIndex = subjects.findIndex((s) => s.id === subjectId);
+    const subjectIndex = subjects.findIndex((s) => s.id === subjectid);
 
     if (subjectIndex === -1) {
-      console.error(`Subject with id ${subjectId} not found`);
+      console.error(`Subject with id ${subjectid} not found`);
       return false;
     }
 
@@ -193,17 +193,17 @@ export async function addGradeToSubject(
 
 // Delete a grade from a specific subject
 export async function deleteGradeFromSubject(
-  subjectId: string,
+  subjectid: string,
   gradeIndex: number,
   userId?: string,
   syncEnabled?: boolean
 ): Promise<boolean> {
   try {
     const subjects = await getSubjectsFromStorage(userId, syncEnabled);
-    const subjectIndex = subjects.findIndex((s) => s.id === subjectId);
+    const subjectIndex = subjects.findIndex((s) => s.id === subjectid);
 
     if (subjectIndex === -1) {
-      console.error(`Subject with id ${subjectId} not found`);
+      console.error(`Subject with id ${subjectid} not found`);
       return false;
     }
 
